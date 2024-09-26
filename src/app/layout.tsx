@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { BreadcrumbProvider } from "@/breadcrumb";
+import { Breadcrumb, BreadcrumbProvider } from "@/breadcrumb";
+import Link from "next/link";
+import { Header } from "./components";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,6 +34,7 @@ export default function RootLayout({
       >
         <h1>Pathname: </h1>
         <BreadcrumbProvider>
+          <Header />
           {children}
         </BreadcrumbProvider>
       </body>
